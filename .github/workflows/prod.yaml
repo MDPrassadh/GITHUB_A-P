@@ -4,11 +4,10 @@ on: push
 
 jobs:
     prod-job:
-      runs-on: ubuntu-latest
-      steps:
+        runs-on: ubuntu-latest
+        steps:
           - name: ------------
             run: echo "HI____"
 
           - name: cal
             run: cal
-            
