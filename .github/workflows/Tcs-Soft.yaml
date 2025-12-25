@@ -1,0 +1,37 @@
+name: TCS-WORKFLOW
+on:
+  workflow_dispatch:
+    
+jobs:
+
+    Build-job: 
+        name: Build Job
+        runs-on: ubuntu-latest
+
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Install Node
+              uses: actions/setup-node@v4  
+              with:
+                node-version: '20'
+            
+            - name: Install dependencies
+              run: npm install
+            
+            - name: Build Application
+              run: npm run build
+        
+    Test-job:
+        name: Testing Stage 
+        runs-on: ubuntu-latest
+        needs: Build-job
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Run Tests
+              run: npm test
