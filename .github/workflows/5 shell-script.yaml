@@ -1,0 +1,21 @@
+name: Using SHELL SCRIPT in Github Actions
+
+on:
+  workflow_dispatch:
+
+jobs:
+    shell-script-job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Check-out repository
+          uses: actions/checkout@v5
+
+        - name: Display file content
+          run: cat devops.txt
+        
+        - name: listing files in the directory
+          run: ls -lrth
+
+        - name: Run Shell Script
+          run: uptime.sh
+          
