@@ -1,0 +1,24 @@
+name: Using Multi-Line-Commands in Github Actions
+
+on:
+  workflow_dispatch:
+
+jobs:
+    Multi-Line-Commands:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Check-out repository
+          uses: actions/checkout@v5
+
+        - name: Using Multi-Line-Commands
+          run: |
+            cat devops.txt
+            ls -lrth
+            pwd
+            chmod +x uptime.sh
+            ./uptime.sh
+        
+        
+         
+        
+       
