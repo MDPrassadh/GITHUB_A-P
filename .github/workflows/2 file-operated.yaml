@@ -1,0 +1,25 @@
+name: FILE OPERATED
+
+on:
+    workflow_dispatch:
+
+jobs:
+    file-operated-job:
+        name: File Operated Stage
+        runs-on: ubuntu-latest
+
+        steps:
+        - name: Create a file
+          run: echo "FILE OPERATED - GITHUB ACTIONS" > bulli.txt
+
+        - name: Display file content
+          run: cat bulli.txt
+
+        - name: List files in the directory
+          run: ls -lrth
+
+        - name: present working directory
+          run: pwd
+
+        - name: Display Date and Time
+          run: date
