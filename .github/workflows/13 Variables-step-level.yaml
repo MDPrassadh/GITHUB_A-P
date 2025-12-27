@@ -1,0 +1,23 @@
+name: Variables Step Level Example
+
+on:
+  workflow_dispatch:
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set step-level variable
+        env:
+          CITY: "HYD"
+          COUNTRY: "INDIA"
+          STATE: "TELANGANA"
+        run: |
+           echo "My city is $CITY"
+           echo "My country is $COUNTRY"
+           echo "My state is $STATE"
+
+
+      - name: Use step-level variable
+        run: echo "My city is ${CITY} ${STATE} of in ${COUNTRY}"
