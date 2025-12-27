@@ -1,0 +1,26 @@
+name: Variables Job Level Example
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+    job1:
+        runs-on: ubuntu-latest
+
+        env:
+         CITY: "HYD"
+         COUNTRY: "INDIA"
+         STATE: "TELANGANA"
+         TEACHER: "PRASSADH"
+            
+        steps:
+          - name: Set job-level variable
+            run: |
+             echo "My city is $CITY"
+             echo "My country is $COUNTRY"
+             echo "My state is $STATE"
+             echo "My teacher is $TEACHER"
+        
+          - name: Use job-level variable
+            run: echo "My city is ${CITY} and state of ${STATE} in ${COUNTRY}. My teacher is ${TEACHER}"
