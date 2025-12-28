@@ -16,4 +16,4 @@ jobs:
         
         run: |
           echo "Secret key received"
-          echo "${{ API_KEY }}"   # Will be masked in logs
+          echo "${{ secrets.API_KEY }}"   # Will be masked in logs
