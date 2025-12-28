@@ -1,0 +1,19 @@
+name: Repo Vars and Secrets Example
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  job1:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show repository variable
+        run: echo "Company is ${{ vars.COMPANY }}"
+
+      - name: Use repository level secret key
+        
+        run: |
+          echo "Secret key received"
+          echo "${{ API_KEY }}"   # Will be masked in logs
