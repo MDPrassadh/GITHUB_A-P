@@ -1,0 +1,16 @@
+name: with Concurrency Demo-cip-true
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: main-branch-group
+  cancel-in-progress: true
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Running workflow"
+      - run: sleep 60
+      - run: echo "Finished"
