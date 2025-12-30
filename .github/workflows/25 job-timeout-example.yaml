@@ -1,0 +1,14 @@
+name: Job level Time out Apply
+
+on:
+  workflow_dispatch:
+
+jobs:
+    job-1:
+          name: Timeout Example
+          runs-on: ubuntu-latest
+          timeout-minutes: 1
+          steps:
+            - run: echo "This is a job with a timeout of 1 minute"
+            - run: sleep 90
+            - run: echo "This step will not be reached if the timeout is exceeded" 
