@@ -1,0 +1,22 @@
+name: Step level Time out Apply
+
+on:
+  workflow_dispatch:
+
+jobs:
+  job-1:
+    name: Step Timeout Example
+    runs-on: ubuntu-latest
+    steps:
+       - name: Job Start
+         run: echo "Job Started"
+         
+       - name: Step with timeout and long sleep
+         timeout-minutes: 1
+         run: sleep 90
+
+       - name: END Step
+         run: echo "This step will not be reached if the timeout is exceeded"
+
+
+        
