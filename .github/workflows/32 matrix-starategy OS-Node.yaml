@@ -1,0 +1,21 @@
+name: Matrix Strategy OS and Node Example
+
+on:
+  workflow_dispatch:
+
+jobs:
+    test:
+        runs-on: ${{ matrix.os }}
+        strategy:
+         matrix:
+            os: [ubuntu-latest, windows-latest, macos-latest]
+            node: [14, 16, 18]
+        steps:
+        - name: Set up Node.js ${{ matrix.node }}
+          uses: actions/setup-node@v3
+          with:
+            node-version: ${{ matrix.node }}
+        - name: Print OS and Node Version
+          run: |
+            echo "Running on ${{ matrix.os }} with Node.js version ${{ matrix.node }}"
+            node -v
