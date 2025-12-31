@@ -1,0 +1,20 @@
+name: alpine and docker info
+
+on:
+  workflow_dispatch:
+
+jobs:
+  alpine-docker-info:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        images: [ helloworld-world , alpine ]
+
+    steps:
+        - name: docker details
+          run: |
+                echo "OS: ${{ matrix.os }}"
+                echo "Image: ${{ matrix.images }}"
+                docker --version
+                docker info
