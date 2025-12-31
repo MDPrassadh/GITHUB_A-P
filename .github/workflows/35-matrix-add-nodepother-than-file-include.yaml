@@ -1,0 +1,21 @@
+name: matrix with include other than os and node
+
+on:
+  workflow_dispatch:
+
+jobs:
+    build:
+        runs-on: ${{ matrix.os }}
+        strategy:
+          matrix:
+            os: [ ubuntu-latest, windows-latest ]
+            node: [ 16 ]
+            include: 
+              - os: ubuntu-latest
+                node: 18
+                message: "node 18 not in configuration added via include"
+        steps:
+            - run: |
+                echo "os ${{ matrix.os }}"
+                echo: "node ${{ matrix.node }}"
+                echo: "message ${{ matrix.message }}"
