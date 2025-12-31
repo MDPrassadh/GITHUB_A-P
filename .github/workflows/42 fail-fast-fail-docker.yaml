@@ -1,4 +1,4 @@
-name: fail-fast false{default} matrix-parallel
+name: fail-fast false matrix-parallel
 on:
   workflow_dispatch:
 
