@@ -2,7 +2,7 @@ name: Branch Based Deployment-feature2
 
 
 on:
-    push:
+    workflow_dispatch:
 
 jobs:
     build:
