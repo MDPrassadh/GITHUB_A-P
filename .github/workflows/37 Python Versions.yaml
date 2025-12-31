@@ -1,0 +1,15 @@
+name: Python Versions Testing
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: [3.8, 3.9, 3.10]
+    steps:
+      - run: echo "Testing on Python ${{ matrix.python }}"
+
+#Use case: compatibility testing.
+
