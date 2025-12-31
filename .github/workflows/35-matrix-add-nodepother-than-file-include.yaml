@@ -17,5 +17,5 @@ jobs:
         steps:
             - run: |
                 echo "os ${{ matrix.os }}"
-                echo: "node ${{ matrix.node }}"
-                echo: "message ${{ matrix.message }}"
+                echo "node ${{ matrix.node }}"
+                echo "message ${{ matrix.message }}"
