@@ -1,6 +1,6 @@
 name: feature1Branch Based Deployment
 on:
-  push:
+  workflow_dispatch:
 
 jobs:
 
