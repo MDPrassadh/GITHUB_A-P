@@ -1,6 +1,6 @@
 name: MBB Deployment
 on:
-  push:
+  workflow_dispatch:
 
 jobs:
 
