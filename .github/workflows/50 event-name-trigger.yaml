@@ -1,5 +1,7 @@
-name: MBB Deployment
+
+name: EVENT PUSH OR WORKFLOW_DISPATCH BB Deployment
 on:
+  #push:
   workflow_dispatch:
 
 jobs:
@@ -8,11 +10,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Building application"
-
+      - run: echo "Event name is ${{ github.event_name }}"
   deploy:
     runs-on: ubuntu-latest
     needs: build
     if: ${{ github.ref == 'refs/heads/main' }}
     steps:
       - run: echo "Deploying to production"
-      - run: echo "Deployment to K8s"
+      - run: echo "Deploy DEVOPS"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
